@@ -113,7 +113,13 @@ public class SortByPolarAngle {
      */
     public static void insertionSortByPolarAngle(Point2D[] pts, Point2D p) {
         // TODO 2b: write insertion sort here
-
+        for (int i = 1; i < pts.length; i++){
+            int j = i;
+            while (j > 1 && compareByPolarAngle(p, pts[j], pts[j-1]) < 0){
+                exch(pts, j, j-1);
+                j--;
+            }
+        }
     }
 
     /** Swap pts[i] and pts[j]. (Given -- use it!) */
